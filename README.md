@@ -86,7 +86,7 @@ The README file should have all the step to set up the project locally. Remember
 
 After you have the documentation, create a repository in GitLab/Github/Bitbucket and send us the link of the repository to pablo.morales@mailmac.net
 
-The time estimated for the project is between 1 and 5 hours, if you feel that will take more you can cut corners, but that will affect the result of the test. 
+The time estimated for the project is between 1 and 5 hours, if you feel that will take more you can cut corners, but that will affect the result of the test. Anyways you still have a complete week for finish the test after you received it.
 
 We are going to give you feedback as fast as possible. 
 
