@@ -1,19 +1,22 @@
 # Backend Developer Challenge
 
-As a Backend developer, we need more than making code to create functionality. So this test is going to be split into several sections with a different kind of challenge. As a framework for simplification, we are going to use Laravel 5.7, MySql as a Database. 
+As a Backend developer, we need more than making code to create functionality. So this test is going to be split into several sections with a different kind of challenge. As a framework for simplification, we are going to use Laravel 5.7 or Django depending if you choose PHP/Python/NodeJS, MySql/MongoDB as a Database. 
 
 If you have any issue understanding some concepts you can find more information here [PHP The Right Way](https://phptherightway.com/)
 
 ## First Challenge
 
-We are going to use Docker for use Nginx/Apache, PHP 7.1.13, MySql, so the first step is to create a new project with Laravel and serve new project using Docker together with MySQL, the PHP version need to be 7.1.3 or higher. After you finish with the configuration is expected to have a port on your machine running a web server through Docker. We should be able to run php artisan command related with the database in the command line without a problem. 
+We are going to use Docker for use Nginx/Apache, PHP/Python/NodeJS, MySql, so the first step is to create a new project using Docker together with MySQL. After you finish with the configuration is expected to have a port on your machine running a web server through Docker. We should be able to see a landing page in the browser
 
 #### Considerations
 - Create a database
 - Use docker compose for handling docker configuration
 - You can use the existent configuration on the internet to achieve this step
-- MySql, Apache or Nginx need to run in a docker container 
+- MYSql, Apache or Nginx need to run in a docker container 
 - One line of code is required to spin up the project, preferable ```docker-compose up -d```
+
+
+> We are using as example the creation of a Restful API but create a GRAPHQL API with MongoDB is a plus. 
 
 
 ## Second Challenge
@@ -27,7 +30,9 @@ The Product object should be similar to the one as follow.
 ```
 Product {
   id, 
+  sku,
   title, 
+  url,
   abstract,
   description,
   price,
@@ -40,22 +45,25 @@ Product {
 
 #### Considerations
 
-- We are not going to use auto-numeric id for our IDS we are going to use Universal Unique ID, you should adjust your models base on this, you can use whatever library you fancy more for this. There is plenty for PHP 
-- Remember to create the migrations using Laravel and the command line
-- Use Laravel Seeders to generate at least 100 different products
-- Use [Faker](https://github.com/fzaninotto/Faker) to create dummy data
-- It's a plus if you use [Fractal](https://fractal.thephpleague.com/transformers/) for the format of the API 
+- We are not going to use auto-numeric id for our IDS instead we are going to use Universal Unique ID, UUID, you should adjust your models base on this, you can use whatever library you fancy more for this. There is plenty ready to use in Google
+ 
+- Remember to create the migrations using the command line
+- Use Seeders to generate at least 100 different products
 - You Should throw proper HTTP Errors when the list doesn't have content or when the product that you want to get doesn't exist. The error should be in JSON API standard too
 
 
 ## Third Challenge
 
-We should be able to create new valid product through the endpoint [POST]```/products```
+We should be able to create new valid product through the endpoint [POST]```/products```, the differenciation about this endpoint and the previous one is that only valid user can create products, use Token Authentication for this endpoint. 
+
+What solution you use for this is up to you. 
+
 
 #### Considerations 
 - Validate the data going in
 - Use Event and Listener to encapsulate the product creation logic. 
 - No need to update Product, just create new ones. 
+- Avoid Product duplication, SKU is a unique value
 
 
 ## Forth Challenge
@@ -70,13 +78,15 @@ The scenarios to tests are simple, the possible response for [GET/POST]```/produ
 - Remember to Test the different status code, 404 and 422 also need to be cover in the tests. 
 
 
-
 ## Lately 
 
-Document the project, how to spin up the project, how to run the tests and how to generate the database and the dummy content. 
+Document the project, how to spin up the project, **how to run the tests** and how to generate the database and the dummy content. 
+
+The README file should have all the step to set up the project locally. Remember as less command for set up the project much better. 
 
 After you have the documentation, create a repository in GitLab/Github/Bitbucket and send us the link of the repository to pablo.morales@mailmac.net
 
+The time estimated for the project is between 1 and 5 hours, if you feel that will take more you can cut corners, but that will affect the result of the test. 
 
 We are going to give you feedback as fast as possible. 
 
